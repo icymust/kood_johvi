@@ -1,9 +1,0 @@
-body {
-   display: flex; /* Центрирование содержимого по горизонтали */
-   justify-content: center; /* Центрирование по горизонтали */
-   align-items: center; /* Центрирование по вертикали */
-   height: 100vh; /* Высота окна браузера */
-   margin: 0; /* Убираем отступы вокруг страницы */
-   /* font-family: Arial, sans-serif; Основной шрифт */
-   background-color: #f0f0f0; /* Светлый фон страницы */
-}
