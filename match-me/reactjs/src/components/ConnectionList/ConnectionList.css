@@ -1,0 +1,108 @@
+/* ConnectionList.css */
+.connectionItem {
+  /* display: flex; */
+  /* gap: 20px;
+  align-items: center;
+  padding: 1rem;
+  background-color: #f31b1b;
+  border-radius: 8px;
+  margin-bottom: 50px; */
+  width: 100%;
+}
+
+.profilePictureBox {
+  flex-shrink: 0; /* Prevent shrinking to keep the image in its size */
+}
+
+.profilePicturePreview {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 50%;
+  /* border: 2px solid #ddd; */
+}
+
+.connectedProfileName {
+  font-size: 32px;
+  font-weight: 700;
+  color: #007bff;
+}
+
+.connectedProfileName:hover {
+  color: #2f5b8a;
+}
+
+.profileDetails {
+  flex: 1;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.profileDetails p {
+  margin: 0.2rem 0;
+}
+
+.cProfileLabel {
+  font-weight: bold;
+  color: rgb(57, 57, 57);
+  margin-right: 10px;
+  font-size: 18px;
+}
+
+.cProfileValue {
+  color: #222;
+  font-size: 18px;
+}
+
+.actionButton {
+  padding: 7px 14px;
+  font-size: 14px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.cDisconnectBtn {
+  justify-content: flex-start;
+  border: 3px solid rgba(221, 1, 104, 0.53);
+  border-radius: 10px;
+  color: rgba(221, 1, 104, 0.53);
+  margin-top: 20px;
+}
+
+.cAcceptBtn {
+  justify-content: flex-start;
+  border: 3px solid rgb(1, 221, 155);
+  border-radius: 10px;
+  color: rgb(1, 221, 155);
+  margin-top: 20px;
+}
+
+.actionButton:hover {
+  transform: scale(1.05);
+}
+
+.acceptButton:hover,
+.rejectButton:hover,
+.disconnectButton:hover {
+  background-color: inherit;
+}
+
+.acceptButton:active,
+.rejectButton:active,
+.disconnectButton:active {
+  transform: scale(1.1);
+  background-color: inherit;
+  color: white;
+}
+.buttonSection {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: flex-end; /* This aligns the buttons to the right */
+  margin-left: auto; /* This ensures that the button section is aligned to the right */
+}
+
+.buttonSection button {
+  margin-left: 0; /* Removes any extra margin on the left */
+}

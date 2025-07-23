@@ -1,0 +1,67 @@
+import { delegateEvent } from "../../../framework/core/events.js";
+import { Navigation } from "../partials/navigation.js";
+
+// Persist ref across renders
+const customTargerRef = { current: null };
+
+// Register event delegation once
+delegateEvent("click", ".event-button", (event) => {
+  alert("Delegated button clicked!");
+});
+
+export function EventsPage() {
+  // Register the custom event listener on the target div
+  function setCustomTargetRef(el) {
+    customTargerRef.current = el;
+    if (el && !el._customEventListener) {
+      el.addEventListener("custom-event", (event) => {
+        alert("Custom event received: " + event.detail);
+      });
+      el._customEventListener = true; // Mark as registered
+    }
+  }
+
+  function fireCustomEvent() {
+    if (customTargerRef.current) {
+      const customEvent = new CustomEvent("custom-event", {
+        detail: "Hello from custom event!",
+      });
+      customTargerRef.current.dispatchEvent(customEvent);
+    }
+  }
+
+  document.addEventListener("custom-event", (event) => {
+    alert("Custom event received: " + event.detail);
+  });
+
+  return {
+    tag: "div",
+    children: [
+      Navigation(),
+      { tag: "h1", children: ["Event Handling Demo"] },
+      {
+        tag: "p",
+        children: [
+          "This page demonstrates event delegation and custom events.",
+        ],
+      },
+      {
+        tag: "button",
+        props: { className: "event-button" },
+        children: ["Click me (delegated)"],
+      },
+      {
+        tag: "div",
+        props: { id: "custom-event-target" },
+        ref: setCustomTargetRef,
+        children: [
+          {
+            tag: "button",
+            props: { onClick: fireCustomEvent },
+            children: ["Fire custom event"],
+          },
+        ],
+      },
+    ],
+  };
+}

@@ -1,0 +1,110 @@
+.matchPage {
+  padding: 20px;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.fullProfileSection {
+  display: flex;
+  gap: 20px;
+  padding: 30px;
+  background-color: #f1f1f1;
+  border-radius: 20px;
+}
+
+.profileTextBox {
+  flex: 1;
+}
+
+.fullName {
+  font-size: 32px;
+  font-weight: 700;
+  color: rgb(57, 57, 57);
+  margin-bottom: 15px;
+}
+
+.btnSection {
+  display: flex;
+  gap: 20px;
+  width: 100%;
+}
+
+.disconnectBtn,
+.helloBtn {
+  flex: 1;
+  font-size: 18px;
+  padding: 7px;
+  color: rgb(88, 88, 88);
+  font-weight: 700;
+}
+
+.disconnectBtn {
+  border: 3px solid rgba(221, 1, 104, 0.53);
+  color: rgba(221, 1, 104, 0.53);
+}
+
+.helloBtn {
+  border: 3px solid rgb(1, 221, 155);
+  color: rgb(0, 198, 139);
+}
+
+.helloBtn:hover,
+.disconnectBtn:hover {
+  background-color: inherit;
+  transform: none;
+}
+
+.helloBtn:active {
+  transform: scale(1.05);
+  background-color: rgb(3, 208, 82);
+  color: white;
+}
+
+.disconnectBtn:active {
+  transform: scale(1.05);
+  background-color: rgb(140, 138, 138);
+  color: white;
+}
+
+.profileField {
+  margin-bottom: 10px;
+}
+
+.profileLabel {
+  font-weight: bold;
+  color: rgb(57, 57, 57);
+  margin-right: 10px;
+  font-size: 18px;
+}
+
+.profileValue {
+  color: #222;
+  font-size: 18px;
+}
+
+@media (max-width: 640px) {
+  .fullProfileSection {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .fullName {
+    font-size: 24px;
+  }
+
+  .profileLabel,
+  .profileValue {
+    font-size: 16px;
+  }
+
+  .btnSection {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .disconnectBtn,
+  .helloBtn {
+    width: 100%;
+    font-size: 16px;
+  }
+}

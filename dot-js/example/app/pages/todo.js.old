@@ -1,0 +1,101 @@
+import { Navigation } from "../partials/navigation.js";
+import { createState } from "../../../framework/core/state.js";
+
+const [tasks, setTasks] = createState([], "todoTasks");
+const [input, setInput] = createState("", "todoInput");
+
+export function ToDo() {
+  return {
+    tag: "div",
+    children: [
+      Navigation(),
+      { tag: "h1", children: ["ToDo App"] },
+
+      {
+        tag: "div",
+        props: { style: { marginBottom: "1rem" } },
+        children: [
+          {
+            tag: "input",
+            props: {
+              type: "text",
+              value: input.value,
+              placeholder: "New task",
+              onInput: (e) => setInput(e.target.value),
+            },
+          },
+          {
+            tag: "button",
+            props: {
+              onClick: () => {
+                const val = input.value.trim();
+                if (val) {
+                  setTasks((prev) => [...prev, { text: val, done: false }]);
+                  setInput("");
+                }
+              },
+              style: { color : "green", marginLeft: "0.5rem"}
+            },
+            children: ["Add"],
+          },
+        ],
+      },
+
+      {
+        tag: "ul",
+        children: tasks.value.map((task, idx) => ({
+          tag: "li",
+          props: {
+            style: {
+              display: "flex",
+              alignItems: "center",
+              marginBottom: "0.5rem",
+            },
+          },
+          children: [
+            {
+              tag: "input",
+              props: {
+                type: "checkbox",
+                checked: task.done,
+                onChange: () =>
+                  setTasks((prev) =>
+                    prev.map((t, i) =>
+                      i === idx ? { ...t, done: !t.done } : t
+                    )
+                  ),
+              },
+            },
+            {
+              tag: "span",
+              props: {
+                style: {
+                  textDecoration: task.done ? "line-through" : "none",
+                  margin: "0 0.5rem",
+                },
+              },
+              children: [task.text],
+            },
+            {
+              tag: "button",
+              props: {
+                onClick: () =>
+                  setTasks((prev) => prev.filter((_, i) => i !== idx)),
+                style: { color: "red" },
+              },
+              children: ["Delete"],
+            },
+          ],
+        })),
+      },
+      {
+        tag: "button",
+        props: {
+          onClick: () => setTasks([]),
+          style: { color: "orange", marginTop: "1rem" }
+        },
+        children: ["Clear All"]
+      },
+    ],
+  };
+}

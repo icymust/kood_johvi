@@ -1,0 +1,15 @@
+{
+  "name": "dot-js",
+  "version": "1.0.0",
+  "description": "Custom frontend framework",
+  "main": "framework/index.js",
+  "type": "module",
+  "scripts": {
+    "start": "npx live-server . --entry-file=example/index.html"
+  },
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "live-server": "^1.2.2"
+  }
+}

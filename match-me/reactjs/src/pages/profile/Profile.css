@@ -1,0 +1,160 @@
+.profilePage {
+  padding: 20px;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.inputForm {
+  width: 500px;
+  /* margin: 0 auto;*/
+}
+
+.firstNameInput,
+.lastNameInput,
+.aboutMeInput,
+.interestsInput,
+.preferencesInput,
+.maxDistanceInput,
+.submitBtn,
+.ageSelect {
+  width: 100%;
+  font-size: 17px;
+  padding: 10px 13px;
+  border-radius: 5px;
+  border: 1px solid black;
+}
+
+.userEmail {
+  width: 400px;
+  font-size: 17px;
+  padding: 10px 13px;
+  background-color: rgb(241, 240, 240);
+  border-radius: 5px;
+  border: 1px solid rgb(187, 185, 185);
+  margin: 0;
+}
+
+.inputForm label {
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.male {
+  margin-right: 20px;
+}
+
+input[type="radio"] {
+  width: 20px;
+  height: 20px;
+  vertical-align: middle;
+  margin-right: 8px;
+}
+
+.ageSelect {
+  padding: 10px 13px;
+  font-size: 17px;
+}
+
+.inputForm input,
+.inputForm textarea,
+.inputForm select {
+  font-family: inherit;
+  font-size: 16px;
+}
+
+.submitBtn {
+  padding: 15px;
+  font-size: 20px;
+  background-color: rgb(127, 255, 244);
+  border: none;
+  transition: transform 0.1s ease, background-color 0.1s ease;
+}
+
+.submitBtn:active {
+  transform: scale(0.97);
+  background-color: rgb(102, 204, 195);
+}
+.ageRangeInputs {
+  margin-bottom: 1rem;
+}
+
+.ageInputsRow {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.ageInputsRow input {
+  width: 80px;
+  padding: 6px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+.pictureButton {
+  padding: 10px 16px;
+  background-color: #ffffff;
+  color: rgb(77, 77, 77);
+  font-size: 18px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  display: inline-block;
+  text-align: center;
+  font-weight: 600;
+  border: 2px solid rgb(77, 77, 77);
+}
+
+.fileLabel {
+  display: inline-block;
+  cursor: pointer;
+}
+
+.successMessage {
+  display: block;
+  margin-top: 30px;
+  color: black;
+  padding: 20px;
+  background-color: aquamarine;
+  border-radius: 15px;
+  font-size: 20px;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .profilePage {
+    padding: 16px;
+  }
+
+  .inputForm {
+    width: 100%;
+  }
+
+  .userEmail {
+    width: 100%;
+  }
+
+  .ageInputsRow {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .ageInputsRow input {
+    width: 100%;
+  }
+
+  .submitBtn {
+    width: 100%;
+  }
+
+  .pictureButton {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .successMessage {
+    font-size: 16px;
+    padding: 10px;
+    margin-top: 20px;
+  }
+}

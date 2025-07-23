@@ -1,0 +1,265 @@
+.recommendationsPage {
+  padding: 20px;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.recommendationsList {
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+}
+
+/* Each recommendation card */
+.recommendationItem {
+  display: flex;
+  background-color: #f1f1f1;
+  border-radius: 20px;
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+  gap: 24px;
+}
+
+/* Profile Picture */
+/* .profilePictureBox {
+  flex-shrink: 0;
+  width: 150px;
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+} */
+
+/* Update & Distance Buttons */
+.recoSettings {
+  margin-top: 30px;
+  display: flex;
+  gap: 20px;
+}
+
+.recoSettings > * {
+  flex: 1;
+}
+
+.refreshButton {
+  background-color: #f1f1f1;
+  border-radius: 15px;
+  font-size: 17px;
+  font-weight: 500;
+  transition: transform 0.1s ease, background-color 0.1s ease;
+}
+
+.radiusInput {
+  text-align: center;
+  background-color: #f1f1f1;
+  border-radius: 15px;
+  padding: 5px 20px 0 20px;
+}
+
+.radiusLabel {
+  font-size: 17px;
+  font-weight: 500;
+}
+
+.maxDistanceInput {
+  width: 100%;
+  padding: 0;
+  border: none;
+  margin: 0 0 10px 0;
+}
+
+.maxDistanceInput {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 7px;
+  background: #ccc;
+  border-radius: 15px;
+  outline: none;
+}
+
+.maxDistanceInput::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 20px;
+  width: 20px;
+  background: rgb(1, 221, 155);
+  border-radius: 50%;
+  cursor: pointer;
+  /* margin-top: -7px; */
+}
+
+.maxDistanceInput::-moz-range-thumb {
+  height: 20px;
+  width: 20px;
+  background: rgb(1, 221, 155);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.profilePicturePreview {
+  /* width: 150px;
+  height: 150px; */
+  min-width: 150px;
+  min-height: 150px;
+  /* object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid #ccc; */
+}
+
+/* Profile Details */
+/* .profileDetails {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+} */
+
+/* Profile Name */
+a.fullName {
+  font-size: 32px;
+  font-weight: 700;
+  color: rgb(57, 57, 57);
+}
+
+.rProfileLabel {
+  font-weight: bold;
+  color: rgb(57, 57, 57);
+  margin-right: 10px;
+  font-size: 18px;
+}
+
+.rProfileValue {
+  color: #222;
+  font-size: 18px;
+}
+
+/* .profileName:hover {
+  color: #007bff;
+} */
+
+/* .profileDetails p {
+  margin: 0;
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.4;
+} */
+
+/* Button Section */
+.recoButtons {
+  display: flex;
+  gap: 20px;
+  width: 100%;
+}
+
+/* Action Buttons */
+.recoReject,
+.recoConnect {
+  flex: 1;
+  font-size: 18px;
+  padding: 7px;
+  font-weight: 700;
+  color: rgb(88, 88, 88);
+}
+
+.recoReject {
+  border: 3px solid rgba(221, 1, 104, 0.53);
+  color: rgba(221, 1, 104, 0.53);
+}
+
+.recoConnect {
+  border: 3px solid rgb(1, 221, 155);
+  color: rgb(0, 198, 139);
+}
+.errorMessage {
+  background-color: #f8d7da;  /* Light red background */
+  color: #721c24;  /* Dark red text color */
+  border: 1px solid #f5c6cb;  /* Red border */
+  padding: 15px;
+  border-radius: 5px;
+  margin: 10px 0;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* .actionButton:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+} */
+
+/* Refresh Button */
+/* .refreshButton {
+  margin-top: 2rem;
+  padding: 10px 20px;
+  background-color: #2563eb;
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+} */
+
+/* Responsive */
+/* @media (max-width: 640px) {
+  .recommendationItem {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem;
+    gap: 20px;
+  }
+
+  .profilePicturePreview {
+    width: 75px;
+    height: 75px;
+  }
+
+  .profileName {
+    font-size: 1.3rem;
+  }
+
+  .buttonSection {
+    flex-wrap: wrap;
+  }
+} */
+
+@media (max-width: 640px) {
+  .recommendationItem {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem;
+    gap: 20px;
+  }
+
+  .profilePicturePreview {
+    min-width: 75px;
+    min-height: 75px;
+  }
+
+  a.fullName {
+    font-size: 1.3rem;
+  }
+
+  .rProfileLabel,
+  .rProfileValue {
+    font-size: 16px;
+  }
+
+  .recoButtons {
+    flex-wrap: wrap;
+  }
+
+  .recoReject,
+  .recoConnect {
+    width: 100%;
+  }
+
+  .radiusInput {
+    padding: 10px;
+  }
+
+  .recoSettings {
+    flex-direction: column;
+  }
+  
+}

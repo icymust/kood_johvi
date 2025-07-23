@@ -1,0 +1,39 @@
+.home-title {
+  text-align: center;
+  margin: 70px 0;
+  font-size: 50px;
+  font-weight: 800;
+}
+
+.or {
+  text-align: center;
+  margin: 30px;
+  font-weight: 600;
+  font-size: 25px;
+}
+
+.btn-wrapper {
+  display: flex;
+  justify-content: center;
+  margin: 40px;
+}
+
+.new-account {
+  width: 300px;
+  display: block;
+  margin-left: 0;
+  background-color: rgb(127, 255, 244);
+  transition: all 0.3s ease;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #0e0e0e;
+  font-size: 18px;
+}
+
+.new-account:hover {
+  background-color: rgb(74, 209, 198);
+}
+
+.new-account:active {
+  transform: scale(1.1);
+}

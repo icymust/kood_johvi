@@ -1,0 +1,137 @@
+/* connections.css */
+.connectionsPage {
+  padding: 20px;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.tabs {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.tabButton {
+  padding: 10px 20px;
+  font-size: 18px;
+  background-color: #f1f1f1;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  cursor: pointer;
+  color: #333;
+}
+
+.tabButton:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.tabButton.active {
+  background-color: white;
+  color: #333;
+  border-color: #888;
+}
+
+.connectionList {
+  display: flex;
+  flex-direction: column;
+  border-radius: 20px;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.connectionList li {
+  margin-bottom: 1rem;
+  padding: 10px;
+  background-color: #f1f1f1;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.connectionList li:hover {
+  background-color: #e0e0e0;
+}
+
+.connectionList button {
+  padding: 7px 14px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.connectionList button.accept {
+  background-color: #3dc9f4;
+  border: none;
+  color: white;
+}
+
+.connectionList button.reject {
+  background-color: #f44336;
+  border: none;
+  color: white;
+}
+
+.connectionList button.accept:hover,
+.connectionList button.reject:hover {
+  transform: scale(1.05);
+}
+
+.connectionList button.accept:active,
+.connectionList button.reject:active {
+  transform: scale(1.1);
+  background-color: inherit;
+}
+
+@media (max-width: 768px) {
+  .tabs {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .tabButton {
+    width: 100%;
+  }
+
+  .connectionList {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .connectionList li {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 30px;
+  }
+
+  .profilePicturePreview {
+    min-width: 150px;
+    min-height: 150px;
+  }
+
+  .connectionDetailsBox {
+    width: 100%;
+  }
+
+  .buttonSection {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    width: 100%;
+  }
+
+  .buttonSection button {
+    width: 100%;
+    text-align: center;
+  }
+
+  a.fullName {
+    font-size: 1.3rem;
+  }
+
+  .cProfileLabel,
+  .cProfileValue {
+    font-size: 16px;
+  }
+}

@@ -1,0 +1,138 @@
+{
+	"info": {
+		"_postman_id": "2f4ebf2f-c558-46cc-b66c-5209432e9b65",
+		"name": "Match Me",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "13366230"
+	},
+	"item": [
+		{
+			"name": "Chat",
+			"item": [
+				{
+					"name": "chats by user ID",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/chats/3f108473-a4b6-4184-9dfa-86b668fe7cb6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"chats",
+								"3f108473-a4b6-4184-9dfa-86b668fe7cb6"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Message",
+			"item": [
+				{
+					"name": "send message or create chat",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"senderId\": \"6e2b1769-cfb1-4d5b-9cd6-bffef00c9262\",\n    \"receiverId\": \"983aa51f-e011-466d-a3a3-b1ecc31bfb73\",\n    \"content\": \"Hi again , how are you ?\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/messages/send",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"messages",
+								"send"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "messages by chat ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/messages/f8b6a4b4-c8dc-4115-ad9f-6e130b9954bb",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"messages",
+								"f8b6a4b4-c8dc-4115-ad9f-6e130b9954bb"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "seen -> true by chat ID",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/messages/f8b6a4b4-c8dc-4115-ad9f-6e130b9954bb/read",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"messages",
+								"f8b6a4b4-c8dc-4115-ad9f-6e130b9954bb",
+								"read"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

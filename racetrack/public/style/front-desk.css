@@ -1,0 +1,264 @@
+/* Global styles */
+body {
+    margin: 0;
+    padding: 20px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    background-color: #0f172a;
+    color: #ffffff;
+    -webkit-text-size-adjust: 100%;
+}
+
+/* Header styles */
+.header-container {
+    margin-bottom: 30px;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #1e293b;
+    width: 100%;
+    box-sizing: border-box;
+    position: relative;
+    z-index: 2;
+}
+
+h1 {
+    color: #60a5fa;
+    text-align: center;
+    font-size: clamp(1.8em, 5vw, 2.5em);
+    margin-bottom: 30px;
+    word-wrap: break-word;
+}
+
+/* Menu container */
+.menu-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+    width: 100%;
+    position: relative;
+    z-index: 2;
+}
+
+.menu-container button {
+    padding: 12px 24px;
+    background-color: #3b82f6;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: clamp(0.875rem, 2vw, 1rem);
+    transition: background-color 0.2s;
+    width: 100%;
+    max-width: 300px;
+    touch-action: manipulation;
+}
+
+.menu-container button:hover {
+    background-color: #2563eb;
+}
+
+/* Race management styles */
+#new-race-button {
+    padding: 12px 24px;
+    background-color: #10b981;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    font-size: clamp(0.875rem, 2vw, 1rem);
+    width: 100%;
+    max-width: 300px;
+    touch-action: manipulation;
+}
+
+#new-race-button:hover {
+    background-color: #059669;
+}
+
+#races-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+}
+
+.race-block {
+    background-color: #1e293b;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.race-block h2 {
+    color: #60a5fa;
+    margin-bottom: 20px;
+    font-size: clamp(1.2em, 4vw, 1.5em);
+}
+
+.race-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+@media (min-width: 768px) {
+    .race-content {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .menu-container button,
+    #new-race-button {
+        width: auto;
+    }
+}
+
+.add-driver-form, .drivers-list {
+    padding: 15px;
+    background-color: #0f172a;
+    border-radius: 6px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.add-driver-form h3, .drivers-list h3 {
+    color: #60a5fa;
+    margin-bottom: 15px;
+    font-size: clamp(1em, 3vw, 1.2em);
+}
+
+/* Form styles */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+}
+
+form label {
+    color: #94a3b8;
+    font-size: clamp(0.875rem, 2vw, 1rem);
+}
+
+form input {
+    padding: 12px 8px;
+    border: 1px solid #3b82f6;
+    border-radius: 4px;
+    background-color: #1e293b;
+    color: white;
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 16px; /* Prevents iOS zoom on focus */
+}
+
+form button {
+    padding: 12px 10px;
+    background-color: #3b82f6;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+    font-size: clamp(0.875rem, 2vw, 1rem);
+    touch-action: manipulation;
+}
+
+form button:hover {
+    background-color: #2563eb;
+}
+
+/* Drivers list styles */
+.drivers-list ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+.drivers-list li {
+    background-color: #1e293b;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.driver-info {
+    flex: 1;
+    min-width: 150px;
+    word-break: break-word;
+}
+
+.driver-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.edit-driver, .delete-driver {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: clamp(0.75rem, 2vw, 0.875rem);
+    touch-action: manipulation;
+}
+
+.edit-driver {
+    background-color: #f59e0b;
+    color: white;
+}
+
+.edit-driver:hover {
+    background-color: #d97706;
+}
+
+.delete-driver {
+    background-color: #ef4444;
+    color: white;
+}
+
+.delete-driver:hover {
+    background-color: #dc2626;
+}
+
+/* Touch device optimizations */
+@media (hover: none) {
+    .menu-container button,
+    #new-race-button,
+    form button,
+    .edit-driver,
+    .delete-driver {
+        -webkit-tap-highlight-color: transparent;
+    }
+}
+
+/* Small screen optimizations */
+@media (max-width: 480px) {
+    body {
+        padding: 10px;
+    }
+
+    .header-container {
+        padding: 15px;
+        margin-bottom: 50px;
+    }
+
+    .race-block {
+        padding: 15px;
+    }
+
+    form {
+        margin-top: 100px;
+    }
+
+    .menu-container {
+        margin-bottom: 30px;
+    }
+}

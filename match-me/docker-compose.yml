@@ -1,0 +1,80 @@
+services:
+  postgres:
+    image: postgis/postgis:latest
+    container_name: postgresm
+    restart: always
+    environment:
+      POSTGRES_DB: matchme_db
+      POSTGRES_USER: matchme_user
+      POSTGRES_PASSWORD: password
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./postgres/data:/var/lib/postgresql/data
+      - ./postgres/init/init.sql:/docker-entrypoint-initdb.d/init.sql
+      - ./postgres/seeds:/seeds
+    healthcheck:
+      test: ["CMD", "pg_isready", "-U", "matchme_user", "-d", "matchme_db"]
+      interval: 10s
+      retries: 5
+      start_period: 10s
+
+  seeder:
+    image: postgis/postgis:latest
+    container_name: dbseeder
+    restart: no
+    profiles: ["seed"]
+    volumes:
+      - ./postgres/seeds:/seeds
+      - ./postgres/seed.sh:/seed.sh
+    command: bash /seed.sh
+    environment:
+      POSTGRES_DB: matchme_db
+      POSTGRES_USER: matchme_user
+      POSTGRES_PASSWORD: password
+      
+  spring:
+    build: ./spring
+    container_name: springm
+    restart: always
+    depends_on:
+      postgres:
+        condition: service_healthy
+    volumes:
+      - ./spring/uploads:/app/uploads
+    ports:
+      - "8443:8443"
+
+  reactjs:
+    build:
+      context: ./reactjs
+      dockerfile: DockerFile.dev # Use Dockerfile.dev for development
+    container_name: reactm
+    restart: always
+    ports:
+      - "3443:3443"
+    environment:
+      - VITE_API_URL=https://localhost:8443
+      - NODE_ENV=development # Or 'production'
+    volumes:
+      - ./reactjs/src:/app/src
+      - ./reactjs/public:/app/public
+      - ./reactjs/certs:/app/certs
+
+  pgadmin:
+    image: dpage/pgadmin4
+    container_name: pgadminm
+    restart: always
+    environment:
+      PGADMIN_DEFAULT_EMAIL: "admin@admin.com"
+      PGADMIN_DEFAULT_PASSWORD: "admin"
+      PGADMIN_CONFIG_SERVER_MODE: "False"
+      PGADMIN_SERVER_JSON_FILE: "/pgadmin4/servers.json"
+    ports:
+      - "5050:80"
+    volumes:
+      - ./pgadmin/data:/var/lib/pgadmin
+      - ./pgadmin/servers.json:/pgadmin4/servers.json
+    depends_on:
+      postgres:
+        condition: service_healthy
