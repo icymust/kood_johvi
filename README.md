@@ -1,2 +1,2 @@
 # kood_johvi
-Tasks 2024-2025
+Software developer projects 2024-2025
